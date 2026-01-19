@@ -31,10 +31,18 @@ allBtns.forEach((btn) => {
             if (btn.classList.contains("number")) {
                 c += btn.textContent;
                 console.log(a, b, c);
+                console.log(a, b, c, sum);
             } else if (btn.id === "equals") {
                 operate(a,b,c)
+                console.log(a, b, c, sum);
+            } else if (btn.classList.contains("operator")){
+                operate(a, b, c);
+                console.log(a, b, c, sum);
+                b = btn.id;
+                a = sum;
+                c = "";
+                console.log(a, b, c, sum);
             }
-
         }
     });
 });
@@ -44,24 +52,20 @@ function operate(a,b,c){
     switch (b) {
         case "divide":
             sum = a / c;
-            roundedSum = Math.round(sum * 10000) / 10000;
-            alert(roundedSum);
-            break;
+            sum = Math.round(sum * 10000) / 10000;
+            return sum;
         case "mutiply":
             sum = a * c;
-            roundedSum = Math.round(sum * 10000) / 10000;
-            alert(roundedSum);
-            break;
+            sum = Math.round(sum * 10000) / 10000;
+            return sum;
         case "subtract":
             sum = a - c;
-            roundedSum = Math.round(sum * 10000) / 10000;
-            alert(roundedSum);
-            break;
+            sum = Math.round(sum * 10000) / 10000;
+            return sum;
         case "add":
-            sum = a + c;
-            roundedSum = Math.round(sum * 10000) / 10000;
-            alert(roundedSum);
-            break;
+            sum = +a + +c;
+            sum = Math.round(sum * 10000) / 10000;
+            return sum;
         default:
             alert("");
     }
