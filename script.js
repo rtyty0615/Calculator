@@ -1,7 +1,7 @@
 
 let sum = 0;
-let a = 0;
-let b = "";
+let a = 0; 
+let b = ""; 
 let c = "";
 
 const allBtns = document.querySelectorAll("button");
@@ -29,15 +29,19 @@ allBtns.forEach((btn) => {
                     console.log(a, b, c);
                 }
             } else if (btn.classList.contains("number")) {
+                // fixed zero
                 if (btn.id === "decimal" && String(a).includes(".")) {
                     console.log(a, b, c);
-                } 
-                // fixed zero
-                else {
+                } else if (btn.id === "delete"){
+                    a = a.slice(0,-1);
+                    console.log(a, b, c);
+
+                } else {
                     a+= btn.textContent;
                     console.log(a, b, c);
                 }
             } else if (btn.classList.contains("operator")) {
+
                 b = btn.id;
                 console.log(a, b, c);
             } 
@@ -47,6 +51,10 @@ allBtns.forEach((btn) => {
                     c = 0;
                     c += btn.textContent;
                     console.log(a, b, c);
+                } else if (btn.id === "delete") {
+                    b = "";
+                    console.log(a, b, c);
+
                 } else {
                     c = btn.textContent;
                     console.log(a, b, c);
@@ -63,6 +71,9 @@ allBtns.forEach((btn) => {
                     c = "";
                     c += btn.textContent;
                     console.log(a, b, c, sum);
+                } else if (btn.id === "delete") {
+                    c = c.slice(0, -1);
+                    console.log(a, b, c);
                 } else {
                     c += btn.textContent;
                     console.log(a, b, c, sum);
