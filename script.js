@@ -7,7 +7,11 @@ let c = "";
 const allBtns = document.querySelectorAll("button");
 allBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-        if (a === ""){
+        if (btn.id === "clear"){
+            a = b = c = "";
+            sum = 0;
+            console.log(a, b, c, sum);
+        } else if (a === ""){
             if (btn.classList.contains("number")) {
                 a = btn.textContent;
                 console.log(a, b, c);}
@@ -48,7 +52,6 @@ allBtns.forEach((btn) => {
 });
 
 function operate(a,b,c){
-    
     switch (b) {
         case "divide":
             sum = a / c;
