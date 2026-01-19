@@ -31,25 +31,35 @@ allBtns.forEach((btn) => {
             if (btn.classList.contains("number")) {
                 c += btn.textContent;
                 console.log(a, b, c);
+            } else if (btn.id === "equals") {
+                operate(a,b,c)
             }
+
         }
     });
 });
 
-// function operate(){
+function operate(a,b,c){
     
-//     switch (b) {
-//         case "divide":
+    switch (b) {
+        case "divide":
+            sum = a / c;
+            alert(sum);
+            break;
+        case "mutiply":
+            sum = a * c;
+            alert(sum);
+            break;
+        case "subtract":
+            sum = a - c;
+            alert(sum);
+            break;
+        case "add":
+            sum = a + c;
+            alert(sum);
+            break;
+        default:
+            alert("");
+    }
 
-//             alert('Too small');
-//         case "mutiply":
-//             alert('Exactly!');
-//         case "subtract":
-//             alert('Too big');
-//         case "add":
-//             alert('Too big');
-//         default:
-//             alert("I don't know such values");
-//     }
-
-// }
+}
