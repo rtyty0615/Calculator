@@ -44,19 +44,23 @@ function operate(a,b,c){
     switch (b) {
         case "divide":
             sum = a / c;
-            alert(sum);
+            roundedSum = Math.round(sum * 10000) / 10000;
+            alert(roundedSum);
             break;
         case "mutiply":
             sum = a * c;
-            alert(sum);
+            roundedSum = Math.round(sum * 10000) / 10000;
+            alert(roundedSum);
             break;
         case "subtract":
             sum = a - c;
-            alert(sum);
+            roundedSum = Math.round(sum * 10000) / 10000;
+            alert(roundedSum);
             break;
         case "add":
             sum = a + c;
-            alert(sum);
+            roundedSum = Math.round(sum * 10000) / 10000;
+            alert(roundedSum);
             break;
         default:
             alert("");
