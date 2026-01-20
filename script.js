@@ -91,7 +91,7 @@ allBtns.forEach((btn) => {
         } else if ( b !== "" && c !== "" ) {
             if (btn.classList.contains("number")) {
                 // can't repeat .
-                if (btn.id === "decimal" && String(a).includes(".")){
+                if (btn.id === "decimal" && String(c).includes(".")){
                     console.log(a, b, c, sum);
                 } else if (btn.id === "delete") {
                     c = String(c).slice(0, -1);

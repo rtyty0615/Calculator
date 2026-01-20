@@ -44,6 +44,7 @@ body {
     background-color: bisque;
     margin-bottom: 20px;
     padding: 60px;
+    word-break: break-all;
 }
 
 p {
